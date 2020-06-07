@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.62.2" />
+<title>Mayank Murali</title>
+
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-min.css">
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/menus-min.css">
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" async>
+
+<link rel='shortcut icon' type='image/png' href='/img/icon_hu26f271b218bfbcdcc2d7c4970e2dc205_23311_32x32_resize_box_2.4a400f648bf4b67bb1f32f40ed0193cf863054a4cdd249490fc2d6938836c801.png' sizes="32x32"/>
+
+<link rel="apple-touch-icon" type='image/png' href='/img/icon_hu26f271b218bfbcdcc2d7c4970e2dc205_23311_152x152_resize_box_2.png' sizes="152x152"/>
+
+<link rel="apple-touch-icon" type='image/png' href='/img/icon_hu26f271b218bfbcdcc2d7c4970e2dc205_23311_167x167_resize_box_2.png' sizes="167x167"/>
+
+<link rel="apple-touch-icon" type='image/png' href='/img/icon_hu26f271b218bfbcdcc2d7c4970e2dc205_23311_180x180_resize_box_2.png' sizes="180x180"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="stylesheet" href="https://benjamincongdon.me/scss/default.e1a1b6d1085c75aaefc70dbd699543c910964b3cb7bce6d9b21987fb5c739099.css">
+
+<link rel="canonical" href="https://MayankMurali.github.io/">
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-72102716-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+    </script>
+    
+<meta property="og:title" content="" />
+<meta property="og:description" content="The personal website of Mayank Murali" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://MayankMurali.github.io" />
+
+<meta itemprop="description" content="The personal website of Mayank Murali><link rel="manifest">
+
+<link rel="stylesheet" href="https://benjamincongdon.me/scss/homepage.e02f3e47dfab52e9d649c90582164cf78326724c2526fdc34525a84af65dff04.css">
+
+
+<style>
+
+:root {
+
+  --clr-light-mode: -webkit-linear-gradient(#002D62, #002D62);
+  --foreground: -webkit-linear-gradient(#002D62, #002D62);
+  --foreground: var(--clr-dark);
+  --background: var(--clr-light);
+  --accent: var(--clr-light-mode);
+}
+
+header {
+  color: var(--foreground);
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: var(--title-font);
+  color: var(--foreground);
+}
+
+p {
+  font-family: var(--body-font);
+  color: var(--foreground);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-wrapper pure-g" id="menu">
+            <div class="pure-u-1 pure-u-md-1-3">
+                <div class="pure-menu">
+                    <a class="pure-menu-heading" href="https://MayankMurali.github.io"><span class="first-name">Mayank</span> <span
+                            class="last-name">Murali</span></a>
+                    <div href="#" class="navbar-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></div>
+                </div>
+            </div>
+            <div class="pure-u-1 pure-u-md-2-3">
+                <div class="pure-menu pure-menu-horizontal navbar-js-transformable">
+                    <ul class="pure-menu-list navbar-link-list">
+                        <li class="pure-menu-item"><a href="index.html" class="pure-menu-link">About</a></li>
+                        <li class="pure-menu-item"><a href="resume.html" class="pure-menu-link">Resume</a></li>
+                        <li class="pure-menu-item"><a href="projects.html" class="pure-menu-link">Projects</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<script type="text/javascript">(function(window, document) {
+    var menu = document.getElementById("menu"),
+        rollback,
+        WINDOW_CHANGE_EVENT =
+            "onorientationchange" in window ? "orientationchange" : "resize";
+
+    function toggleHorizontal() {
+        menu.classList.remove("closing");
+        [].forEach.call(
+            document
+                .getElementById("menu")
+                .querySelectorAll(".navbar-js-transformable"),
+            function(el) {
+                el.classList.toggle("pure-menu-horizontal");
+            }
+        );
+    }
+
+    function toggleMenu() {
+        // set timeout so that the panel has a chance to roll up
+        // before the menu switches states
+        if (menu.classList.contains("open")) {
+            menu.classList.add("closing");
+            rollBack = setTimeout(toggleHorizontal, 300);
+        } else {
+            if (menu.classList.contains("closing")) {
+                clearTimeout(rollBack);
+            } else {
+                toggleHorizontal();
+            }
+        }
+        menu.classList.toggle("open");
+        document.getElementById("toggle").classList.toggle("x");
+    }
+
+    function closeMenu() {
+        if (menu.classList.contains("open")) {
+            toggleMenu();
+        }
+    }
+
+    document.getElementById("toggle").addEventListener("click", function(e) {
+        toggleMenu();
+        e.preventDefault();
+    });
+
+    window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
+})(this, this.document);
+</script>
+
+<header>
+    <h1>Personal Blog</h1>
+  </header>
+  <div>
+    <ul>
+      <ul>
+        <a href="#"><h3>A special day!</h3></a>
+        <p>June 7, 2020</p>
+        <p>Its my best friend's birthday! Happy birthday Manasi! Also gotta sayn my boy sammy remembers everything. <br>
+             Hats off to him for keeping us connected and letting us know how much we love each other. Growing up together was fun, having such childhood <br>
+            filled with rich memories of love and happiness is indeed a blessing to be adored.</p>
+      </ul>
+      <ol>
+  </div>
+ 
+</body>
+</html>
