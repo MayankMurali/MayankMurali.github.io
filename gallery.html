@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
 <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/menus-min.css">
 
-<link rel="stylesheet" href="styles_gallery.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" async>
@@ -27,9 +26,7 @@
 
 <link rel="stylesheet" href="https://benjamincongdon.me/scss/default.e1a1b6d1085c75aaefc70dbd699543c910964b3cb7bce6d9b21987fb5c739099.css">
 
-
 <link rel="canonical" href="https://MayankMurali.github.io/">
-
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -50,6 +47,73 @@ if (!doNotTrack) {
 
 <link rel="stylesheet" href="https://benjamincongdon.me/scss/homepage.e02f3e47dfab52e9d649c90582164cf78326724c2526fdc34525a84af65dff04.css">
 
+
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #f1f1f1;
+      
+      font-family: Arial;
+    }
+    
+    /* Center website */
+    .main {
+      max-width: 1000px;
+      margin: auto;
+    }
+    
+    h1 {
+      font-size: 50px;
+      word-break: break-all;
+    }
+    
+    .row {
+      margin: 8px -16px;
+    }
+    
+    /* Add padding BETWEEN each column */
+    .row,
+    .row > .column {
+      padding: 8px;
+    }
+    
+    /* Create four equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 25%;
+    }
+    
+    /* Clear floats after rows */ 
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Content */
+    .content {
+      background-color: white;
+      padding: 10px;
+    }
+    
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 900px) {
+      .column {
+        width: 50%;
+      }
+    }
+    
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
+    </style>
+
 </head>
 
 <body>
@@ -67,7 +131,7 @@ if (!doNotTrack) {
             <div class="pure-u-1 pure-u-md-2-3">
                 <div class="pure-menu pure-menu-horizontal navbar-js-transformable">
                     <ul class="pure-menu-list navbar-link-list">
-                        <li class="pure-menu-item"><a href="https://MayankMurali.github.io" class="pure-menu-link">About</a></li>
+                        <li class="pure-menu-item"><a href="index.html" class="pure-menu-link">About</a></li>
                         <li class="pure-menu-item"><a href="resume.html" class="pure-menu-link">Resume</a></li>
                         <li class="pure-menu-item"><a href="projects.html" class="pure-menu-link">Projects</a></li>
                     </ul>
@@ -76,90 +140,78 @@ if (!doNotTrack) {
         </div>
     </div>
 </nav>
-<script type="text/javascript">(function(window, document) {
-    var menu = document.getElementById("menu"),
-        rollback,
-        WINDOW_CHANGE_EVENT =
-            "onorientationchange" in window ? "orientationchange" : "resize";
 
-    function toggleHorizontal() {
-        menu.classList.remove("closing");
-        [].forEach.call(
-            document
-                .getElementById("menu")
-                .querySelectorAll(".navbar-js-transformable"),
-            function(el) {
-                el.classList.toggle("pure-menu-horizontal");
-            }
-        );
-    }
+ 
+<div class="main">
 
-    function toggleMenu() {
-        // set timeout so that the panel has a chance to roll up
-        // before the menu switches states
-        if (menu.classList.contains("open")) {
-            menu.classList.add("closing");
-            rollBack = setTimeout(toggleHorizontal, 300);
-        } else {
-            if (menu.classList.contains("closing")) {
-                clearTimeout(rollBack);
-            } else {
-                toggleHorizontal();
-            }
-        }
-        menu.classList.toggle("open");
-        document.getElementById("toggle").classList.toggle("x");
-    }
+    <h3>Welcome</h3>
+    <div class="row">
+      <div class="column">
+        <div class="content">
+          <img src="images/aaa.jpg" alt="Mountains" style="width:100%">
+          <h3>The Arboretum at Penn State</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p> -->
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+        <img src="images/bg_1.jpg" alt="Lights" style="width:100%">
+          <h3>Old Main</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p> -->
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+        <img src="images/bg_4.jpg" alt="Nature" style="width:100%">
+          <h3>Kerala, India</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p> -->
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+        <img src="images/psulogo.jpg" alt="Mountains" style="width:100%">
+          <h3>PennState logo</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p> -->
+        </div>
+      </div>
+    <!-- END GRID -->
+    </div>
+    
+    <div class="row">
+      <div class="column">
+        <div class="content">
+          <img src="images/zzz.jpg" alt="Mountains" style="width:100%">
+          <h3>Beaver Stadium</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p> -->
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+        <img src="images/whiteout.jpg" alt="Lights" style="width:100%">
+          <h3>The White Out at Beaver Stadium</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p> -->
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+        <img src="images/first_outing.png" alt="Nature" style="width:100%">
+          <h3>First Outing at State College</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p> -->
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+        <img src="images/samoyed.jpg" alt="Mountains" style="width:100%">
+          <h3>Doggo love</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p> -->
+        </div>
+      </div>
+    <!-- END GRID -->
+    </div>
+    
+    <!-- END MAIN -->
+    </div>
+    
 
-    function closeMenu() {
-        if (menu.classList.contains("open")) {
-            toggleMenu();
-        }
-    }
-
-    document.getElementById("toggle").addEventListener("click", function(e) {
-        toggleMenu();
-        e.preventDefault();
-    });
-
-    window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
-})(this, this.document);
-</script>
-
-
-<ul class="grid">
-    <li>
-      <figure class="grid__figure">
-        <img src="images/aaa.jpg" alt="">
-        <figcaption>Image </figcaption>
-      </figure>
-    </li>
-    <li>
-      <figure class="grid__figure">
-        <img src="images/author.jpg" alt="">
-        <figcaption>Image</figcaption>
-      </figure>
-    </li>
-    <li>
-      <figure class="grid__figure">
-        <img src="images/bg_1.jpg" alt="">
-        <figcaption>Image</figcaption>
-      </figure>
-    </li>
-    <li>
-      <figure class="grid__figure">
-        <img src="images/bg_4.jpg" alt="">
-        <figcaption>Image</figcaption>
-      </figure>
-    </li>
-    <li>
-      <figure class="grid__figure">
-        <img src="images/zzz.jpg" alt="">
-        <figcaption>Image</figcaption>
-      </figure>
-    </li>
-  </ul>
-  
-</div>
 </body>
 </html>
