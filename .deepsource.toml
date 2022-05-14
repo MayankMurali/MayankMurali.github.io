@@ -1,5 +1,16 @@
 version = 1
 
 [[analyzers]]
-name = "csharp"
+name = "javascript"
+enabled = true
+
+  [analyzers.meta]
+  plugins = ["vue"]
+
+[[analyzers]]
+name = "test-coverage"
+enabled = true
+
+[[analyzers]]
+name = "php"
 enabled = true
