@@ -61,4 +61,70 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         });
     }
+
+    // Mobile Navigation Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+
+    // Active nav link highlighting on scroll
+    const sections = document.querySelectorAll('.section');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    const highlightNav = () => {
+        let scrollPos = window.scrollY + 100;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === '#' + sectionId) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+        });
+    };
+
+    window.addEventListener('scroll', highlightNav);
+    highlightNav(); // Initial call
+
+    // Hide/show navigation based on landing page visibility
+    const topNav = document.querySelector('.top-nav');
+    const landingPage = document.getElementById('landing-page');
+    
+    if (topNav && landingPage) {
+        const handleNavVisibility = () => {
+            const landingBottom = landingPage.offsetTop + landingPage.offsetHeight;
+            const scrollPos = window.scrollY;
+            
+            // Hide nav when scrolled past landing page
+            if (scrollPos > landingBottom - 100) {
+                topNav.classList.add('nav-hidden');
+            } else {
+                topNav.classList.remove('nav-hidden');
+            }
+        };
+
+        window.addEventListener('scroll', handleNavVisibility);
+        handleNavVisibility(); // Initial call
+    }
 });

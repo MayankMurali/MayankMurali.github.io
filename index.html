@@ -12,6 +12,25 @@
     <script src="js/animations.js" defer></script>
 </head>
 <body>
+    <!-- Fixed Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="#landing-page" class="nav-logo">MM</a>
+            <ul class="nav-links">
+                <li><a href="#landing-page">HOME</a></li>
+                <li><a href="#about-page">ABOUT</a></li>
+                <li><a href="#experience-page">EXPERIENCE</a></li>
+                <li><a href="#research-page">RESEARCH</a></li>
+                <li><a href="https://www.linkedin.com/in/mayankmurali" target="_blank">CONTACT</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
     <!-- Landing Page Section -->
     <div id="landing-page" class="section">
         <div id="bg"></div>
@@ -33,6 +52,32 @@
 
     <!-- About Me Section -->
     <div id="about-page" class="section">
+        <!-- Dynamic Biology Background -->
+        <div class="biology-bg">
+            <div class="dna-helix dna-1"></div>
+            <div class="dna-helix dna-2"></div>
+            <div class="cell cell-1"></div>
+            <div class="cell cell-2"></div>
+            <div class="cell cell-3"></div>
+            <div class="molecule molecule-1">
+                <div class="atom"></div>
+                <div class="atom"></div>
+                <div class="atom"></div>
+            </div>
+            <div class="molecule molecule-2">
+                <div class="atom"></div>
+                <div class="atom"></div>
+            </div>
+            <div class="neuron neuron-1"></div>
+            <div class="neuron neuron-2"></div>
+            <div class="helix-strand strand-1"></div>
+            <div class="helix-strand strand-2"></div>
+            <div class="floating-particle p1"></div>
+            <div class="floating-particle p2"></div>
+            <div class="floating-particle p3"></div>
+            <div class="floating-particle p4"></div>
+            <div class="floating-particle p5"></div>
+        </div>
         <div class="about-container">
             <h1>About Me</h1>
             <p>I'm a computational researcher passionate about leveraging data science and machine learning to solve complex problems in biological and biomedical research. Currently working at the Broad Institute of MIT and Harvard, I focus on developing innovative computational methods and tools.</p>
@@ -49,7 +94,7 @@
             <div class="experience-card-content">
                 <h5>Broad Institute of MIT and Harvard</h5>
                 <p class="sub-header">Computational Associate II</p>
-                <p class="duration">2022 - Present</p>
+                <p class="duration">2023 - Present</p>
                 <p class="desc">Developing computational tools and pipelines for genomic data analysis. Working on machine learning models for biological insights and creating scalable data processing workflows.</p>
                 <ul>
                     <li>Design and implement data analysis pipelines for genomic research</li>
@@ -58,122 +103,76 @@
                 </ul>
             </div>
         </div>
+        <div class="experience-card">
+            <img src="css/images/UVA_logo.svg" alt="University of Virginia Logo">
+            <div class="experience-card-content">
+                <h5>University of Virginia</h5>
+                <p class="sub-header">Senior Data Analyst</p>
+                <p class="duration">2022 - 2023</p>
+                <p class="desc">Led data analysis initiatives and developed analytical solutions to support research and institutional decision-making.</p>
+                <ul>
+                    <li>Analyzed large-scale datasets to derive actionable insights</li>
+                    <li>Built statistical models and data visualization dashboards</li>
+                    <li>Collaborated with cross-functional teams on research projects</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <!-- Research & Publications Section -->
-    <div id="research-page" class="section research-page">
-        <h1>Research & Publications</h1>
+    <!-- Projects Section -->
+    <div id="research-page" class="section projects-page">
+        <h1>Projects</h1>
         
-        <!-- Research Stats -->
-        <div class="research-stats">
-            <div class="stat-card">
-                <div class="stat-number" data-target="15">0</div>
-                <div class="stat-label">Publications</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="250">0</div>
-                <div class="stat-label">Citations</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="8">0</div>
-                <div class="stat-label">Projects</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="5">0</div>
-                <div class="stat-label">Tools Developed</div>
-            </div>
-        </div>
-
-        <!-- Research Interests -->
-        <div class="research-interests">
-            <h2>Research Interests</h2>
-            <div class="interests-grid">
-                <div class="interest-tag">Computational Biology</div>
-                <div class="interest-tag">Machine Learning</div>
-                <div class="interest-tag">Genomics</div>
-                <div class="interest-tag">Graph Neural Networks</div>
-                <div class="interest-tag">Bioinformatics</div>
-                <div class="interest-tag">Network Science</div>
-            </div>
-        </div>
-
-        <!-- Featured Publications -->
-        <div class="publications-section">
-            <h2>Featured Publications</h2>
-            <div class="publication-card">
-                <div class="pub-year">2024</div>
-                <div class="pub-content">
-                    <h3>Deep Learning Approaches for Genomic Data Analysis</h3>
-                    <p class="pub-authors">Murali, M., et al.</p>
-                    <p class="pub-journal">Nature Computational Biology</p>
-                    <div class="pub-links">
-                        <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
-                        <a href="#" class="pub-link"><i class="fas fa-link"></i> DOI</a>
-                        <a href="#" class="pub-link"><i class="fas fa-code"></i> Code</a>
+        <div class="project-showcase">
+            <!-- Project 1 -->
+            <div class="showcase-card">
+                <div class="showcase-figure">
+                    <img src="css/images/F1.large.jpg" alt="Biosurfer Pipeline Figure">
+                </div>
+                <div class="showcase-content">
+                    <h3>Biosurfer for systematic tracking of regulatory mechanisms leading to protein isoform diversity</h3>
+                    <p class="showcase-abstract">
+                        Biosurfer is a computational tool for comparing protein isoforms by tracking transcriptional, splicing, and translational variations that drive sequence differences. Analysis of 35K+ GENCODE protein pairs revealed that 70% of variable N-termini arise from alternative transcription start sites, while 72% of C-terminal changes involve frameshift-inducing splicing events. Available as a Python package.
+                    </p>
+                    <div class="showcase-links">
+                        <a href="https://genome.cshlp.org/content/35/4/1012.full.pdf" class="showcase-link" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://genome.cshlp.org/content/35/4/1012" class="showcase-link" target="_blank"><i class="fas fa-external-link-alt"></i> Journal</a>
+                        <a href="https://github.com/sheynkman-lab/biosurfer" class="showcase-link" target="_blank"><i class="fab fa-github"></i> Code</a>
                     </div>
                 </div>
             </div>
 
-            <div class="publication-card">
-                <div class="pub-year">2023</div>
-                <div class="pub-content">
-                    <h3>Graph Neural Networks for Protein Interaction Prediction</h3>
-                    <p class="pub-authors">Murali, M., et al.</p>
-                    <p class="pub-journal">Bioinformatics Journal</p>
-                    <div class="pub-links">
-                        <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
-                        <a href="#" class="pub-link"><i class="fas fa-link"></i> DOI</a>
+            <!-- Project 2 -->
+            <div class="showcase-card">
+                <div class="showcase-figure">
+                    <img src="css/images/project2.png" alt="Project 2 Figure">
+                </div>
+                <div class="showcase-content">
+                    <h3>Project Title 2</h3>
+                    <p class="showcase-abstract">
+                        Brief abstract describing the project, its goals, methodology, and key findings. This should give visitors a quick overview of what the project is about and its significance in the field.
+                    </p>
+                    <div class="showcase-links">
+                        <a href="#" class="showcase-link"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="#" class="fab fa-github"></i> Code</a>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Projects & Tools -->
-        <div class="projects-section">
-            <h2>Projects & Tools</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-dna"></i></div>
-                    <h3>GenomicPipeline</h3>
-                    <p>Scalable pipeline for processing genomic sequencing data with ML-based variant calling.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">TensorFlow</span>
-                    </div>
-                    <a href="#" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+            <!-- Project 3 -->
+            <div class="showcase-card">
+                <div class="showcase-figure">
+                    <img src="css/images/project3.png" alt="Project 3 Figure">
                 </div>
-
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-project-diagram"></i></div>
-                    <h3>NetworkAnalyzer</h3>
-                    <p>Tool for analyzing biological networks using graph machine learning techniques.</p>
-                    <div class="project-tags">
-                        <span class="tag">PyTorch</span>
-                        <span class="tag">NetworkX</span>
+                <div class="showcase-content">
+                    <h3>Project Title 3</h3>
+                    <p class="showcase-abstract">
+                        Brief abstract describing the project, its goals, methodology, and key findings. This should give visitors a quick overview of what the project is about and its significance in the field.
+                    </p>
+                    <div class="showcase-links">
+                        <a href="#" class="showcase-link"><i class="fab fa-github"></i> Code</a>
+                        <a href="#" class="showcase-link"><i class="fas fa-external-link-alt"></i> Website</a>
                     </div>
-                    <a href="#" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-chart-bar"></i></div>
-                    <h3>BioViz</h3>
-                    <p>Interactive visualization toolkit for biological data exploration and analysis.</p>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">D3.js</span>
-                    </div>
-                    <a href="#" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-brain"></i></div>
-                    <h3>ExplainableAI</h3>
-                    <p>Framework for interpretable machine learning in genomic research.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">SHAP</span>
-                    </div>
-                    <a href="#" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
