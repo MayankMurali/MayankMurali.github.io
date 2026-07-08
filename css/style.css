@@ -4,7 +4,6 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@300;400;600&display=swap");
-@import url("font-awesome.min.css");
 
 
 /* Basic */
@@ -316,6 +315,10 @@ body::-webkit-scrollbar {
 
 #header nav a[href*="Resume"]:before {
 	content: '\f56d'; /* File contract/document icon */
+}
+
+#header nav a[href^="mailto"]:before {
+	content: '\f0e0'; /* Envelope icon */
 }
 
 #header nav a[href*="about"]:before {
@@ -1040,6 +1043,23 @@ body::-webkit-scrollbar {
 	font-size: 1em;
 }
 
+.showcase-icon {
+	font-size: 6em;
+	color: #193f40;
+	opacity: 0.85;
+}
+
+.pub-note {
+	background: white;
+	border-radius: 12px;
+	padding: 20px 25px;
+	margin-top: 10px;
+	color: #555;
+	font-size: 0.9em;
+	line-height: 1.7;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
 .research-page h2 {
 	font-size: 2em;
 	color: #193f40;
@@ -1315,6 +1335,15 @@ body::-webkit-scrollbar {
 
 	#header p {
 		font-size: 1.1em;
+	}
+
+	.nav-links {
+		gap: 2px;
+	}
+
+	.nav-links li a {
+		padding: 8px 10px;
+		font-size: 0.68em;
 	}
 }
 

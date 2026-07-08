@@ -18,49 +18,66 @@ function animateCounter(element) {
     updateCounter();
 }
 
-// Intersection Observer for scroll animations
-const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Animate stat numbers
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
-            statNumbers.forEach(num => {
-                if (num.textContent === '0') {
-                    animateCounter(num);
-                }
-            });
-            
-            // Add fade-in animations to other elements
-            const cards = entry.target.querySelectorAll('.publication-card, .project-card');
-            cards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
-        }
-    });
-}, observerOptions);
-
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    const researchSection = document.querySelector('.research-page');
-    if (researchSection) {
-        observer.observe(researchSection);
-        
-        // Set initial state for cards
-        const cards = researchSection.querySelectorAll('.publication-card, .project-card');
-        cards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    // Reveal-on-scroll for cards. Each card is observed individually (rather than
+    // watching the whole parent section) so this works no matter how tall the
+    // containing section is — a single big threshold on a tall section can fail
+    // to ever fire because the target percentage of it is never simultaneously
+    // on-screen.
+    const revealCards = document.querySelectorAll('.publication-card, .project-card');
+    revealCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    const cardObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                obs.unobserve(entry.target);
+            }
         });
-    }
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    revealCards.forEach(card => cardObserver.observe(card));
+
+    // Animated stat counters, same per-element observation strategy.
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const statObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3, rootMargin: '0px 0px -40px 0px' });
+
+    statNumbers.forEach(num => statObserver.observe(num));
+
+    // Fallback: if for any reason a card/stat never intersects (e.g. it's already
+    // in the viewport on load and the browser doesn't fire an initial callback,
+    // or JS runs after the user has already scrolled past it), make sure nothing
+    // is left permanently hidden or stuck at 0.
+    window.addEventListener('load', () => {
+        revealCards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0 && card.style.opacity !== '1') {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }
+        });
+        statNumbers.forEach(num => {
+            if (num.textContent === '0') {
+                const rect = num.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    animateCounter(num);
+                }
+            }
+        });
+    });
 
     // Mobile Navigation Toggle
     const navToggle = document.querySelector('.nav-toggle');
@@ -68,8 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (navToggle && navLinks) {
         navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('active');
+            const isActive = navToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
         });
 
         // Close mobile menu when a link is clicked
@@ -77,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 navToggle.classList.remove('active');
                 navLinks.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
             });
         });
     }
